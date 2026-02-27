@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>📊 Risk Assessment Result</h1>
+
+    <div class="result-box">
+
+        {% if result[0] == 1 %}
+            <h2 class="high-risk">⚠ High Credit Risk</h2>
+        {% else %}
+            <h2 class="low-risk">✅ Low Credit Risk</h2>
+        {% endif %}
+
+        <p><strong>Age:</strong> {{ Age }}</p>
+        <p><strong>Gender:</strong> {{ Gender }}</p>
+        <p><strong>Annual Income:</strong> {{ Annual_Income }}</p>
+        <p><strong>Employment Years:</strong> {{ Employment_years }}</p>
+        <p><strong>Credit Score:</strong> {{ Credit_Score }}</p>
+        <p><strong>Loan Amount:</strong> {{ Loan_Amount }}</p>
+        <p><strong>Loan Term:</strong> {{ Loan_Term_Months }} months</p>
+
+    </div>
+
+    <a href="/" class="btn">🔄 Check Another</a>
+
+</div>
+
+</body>
+</html>
